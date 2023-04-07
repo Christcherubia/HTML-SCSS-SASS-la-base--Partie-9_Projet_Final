@@ -1,0 +1,385 @@
+@font-face {
+  font-family: "openLight";
+  src: url("../Fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: "openBold";
+  src: url("../Fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: "openItalic";
+  src: url("../Fonts/OpenSans-Italic.ttf");
+}
+@font-face {
+  font-family: "robotoBlack";
+  src: url("../Fonts/RobotoSlab-Black.ttf");
+}
+@font-face {
+  font-family: "robotoLight";
+  src: url("../Fonts/RobotoSlab-Light.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+
+a, a:visited {
+  color: rgb(242, 252, 255);
+}
+
+body {
+  background: url("../Media/alexandra-dementyeva-Qvsi1vQswOM-unsplash.jpg") fixed center/cover;
+  text-align: center;
+  font-family: "robotoBlack", arial;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
+}
+body:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(17, 17, 17);
+  animation: animeBefore 1.5s ease forwards;
+  animation-delay: 0.15s;
+}
+@keyframes animeBefore {
+  to {
+    opacity: 0;
+  }
+}
+
+.btn {
+  background: none;
+  border: 1px solid rgb(17, 17, 17);
+  font-family: "openLight", sans-serif;
+  height: 45px;
+  width: 170px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.27s;
+}
+.btn:hover {
+  transform: scale(1.03);
+}
+
+header {
+  background: rgba(150, 150, 150, 0.407);
+  position: relative;
+  min-height: 100vh;
+  bottom: 15px;
+  padding: 50px;
+  width: 80%;
+  left: 10%;
+}
+header .header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: headerAnime 1.5s forwards;
+}
+@keyframes headerAnime {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header .header-content h1 {
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 6px;
+  color: rgb(242, 252, 255);
+}
+header .header-content .button {
+  height: 50px;
+  bottom: 55%;
+  left: 50%;
+  border: 1px solid rgba(250, 124, 110, 0.795);
+  border-radius: 3px;
+  margin: 25px;
+  padding: 15px 45px 50px 45px;
+  background: rgba(226, 234, 236, 0.911);
+  transform: translateX(-50%);
+  cursor: pointer;
+  display: flex;
+  transition: 0.9s;
+}
+header .header-content .button p {
+  margin: 5px 0 5px 0;
+  font-family: "robotoBlack", arial;
+  width: 85%;
+  text-shadow: 1px 1px 1.9px rgb(17, 17, 17);
+  font-family: "openLight", sans-serif;
+  font-size: 1.2rem;
+}
+header .header-content .button span {
+  padding: 7px 0 10px 11px;
+  margin: 0px auto;
+}
+header .header-content .button span i {
+  color: rgba(128, 128, 128, 0.92);
+  font-size: 1.5rem;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(128, 128, 128, 0.92);
+  color: rgb(242, 252, 255);
+  height: 65px;
+  width: 85%;
+  z-index: 90;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+header nav .nav-left:hover li:not(:hover) {
+  background: none;
+  color: rgb(242, 252, 255);
+  transition: 0.27s ease;
+}
+header nav .nav-left li {
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+  header nav .nav-left li {
+    font-size: 0.5rem;
+  }
+}
+header nav .nav-left li:first-child {
+  background: rgb(242, 252, 255);
+  color: rgb(17, 17, 17);
+}
+header nav .nav-left li:hover {
+  background: rgb(242, 252, 255);
+  color: rgb(17, 17, 17);
+}
+header nav .nav-right {
+  font-size: 1.1rem;
+  min-width: 100px;
+  width: 25%;
+  max-width: 300px;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+@media screen and (max-width: 700px) {
+  header nav .nav-right {
+    display: grid;
+    transition: 0.2s;
+    font-size: 0.8rem;
+  }
+}
+header nav .nav-right li {
+  transition: 0.15s;
+  cursor: pointer;
+}
+header nav .nav-right li:hover {
+  transform: scale(1.3);
+}
+
+main {
+  width: 80%;
+  margin: 0 auto 30px;
+  background: rgba(226, 234, 236, 0.911);
+}
+main img {
+  width: 100%;
+}
+main .section1 {
+  width: 80%;
+  margin: 0 auto;
+}
+main .section1 span {
+  padding: 70px 0;
+  position: relative;
+  display: block;
+}
+main .section1 span:before, main .section1 span:after {
+  content: "";
+  position: absolute;
+  width: 37%;
+  height: 0.3px;
+  background: rgba(128, 128, 128, 0.92);
+  top: 50%;
+  transform: translateY(-50%);
+}
+main .section1 span:before {
+  left: 0;
+}
+main .section1 span::after {
+  right: 0;
+}
+main .section1 h2 {
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+@media screen and (max-width: 700px) {
+  main .section1 h2 {
+    font-size: 1.7rem;
+  }
+}
+main .section1 p {
+  width: 60%;
+  margin: 30px auto;
+  line-height: 35px;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+main .section1 .btn {
+  margin: 50px 0 90px;
+}
+main .section2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-top: 1px solid rgba(128, 128, 128, 0.92);
+}
+@media screen and (max-width: 700px) {
+  main .section2 {
+    grid-template-columns: 1fr;
+  }
+}
+main .section2 .left-part, main .section2 .right-part {
+  padding: 60px;
+}
+main .section2 .left-part span, main .section2 .right-part span {
+  font-size: 0.7rem;
+}
+main .section2 .left-part h3, main .section2 .right-part h3 {
+  margin: 20px 0;
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 28px;
+}
+main .section2 .left-part p, main .section2 .right-part p {
+  text-align: left;
+  line-height: 30px;
+  margin: 30px 0;
+  font-size: 0.8rem;
+}
+main .section2 .left-part {
+  border-right: 1px solid rgba(128, 128, 128, 0.92);
+}
+
+footer {
+  background: rgba(128, 128, 128, 0.92);
+  width: 85%;
+  min-height: 640px;
+  margin: 0 auto 70px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+@media screen and (max-width: 890px) {
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
+footer form {
+  display: grid;
+  gap: 18px;
+  padding: 60px 50px;
+  grid-template-rows: 18px 45px 18px 45px 18px 200px 1fr;
+}
+footer form label {
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.7rem;
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(231, 231, 231, 0.925);
+}
+footer form input[type=text], footer form textarea {
+  background: none;
+  border: 1px solid rgba(231, 231, 231, 0.925);
+  border-radius: 3px;
+  resize: none;
+}
+footer form .submit-container {
+  display: flex;
+  align-items: flex-end;
+}
+footer form .submit-container .btn {
+  color: rgb(17, 17, 17);
+  border: 1.8px solid rgba(128, 128, 128, 0.92);
+}
+footer .infos-contact {
+  border-left: 1px solid rgba(231, 231, 231, 0.925);
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+@media screen and (max-width: 890px) {
+  footer .infos-contact div:nth-child(1) {
+    border-top: 1px solid rgba(231, 231, 231, 0.925);
+    padding-bottom: 20px;
+  }
+}
+footer .infos-contact div {
+  border-bottom: 1px solid rgba(231, 231, 231, 0.925);
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+}
+footer .infos-contact div h3 {
+  font-family: "openBold", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgba(128, 128, 128, 0.92);
+}
+footer .infos-contact div p {
+  font-size: 0.8rem;
+  line-height: 26px;
+  text-align: left;
+  color: rgba(231, 231, 231, 0.925);
+}
+footer .infos-contact .social ul {
+  display: flex;
+  justify-items: end;
+  padding-right: -25px;
+}
+footer .infos-contact .social ul li {
+  border: 1px solid rgba(231, 231, 231, 0.925);
+  border-radius: 150px;
+  height: 40px;
+  width: 40px;
+  font-size: 0.9rem;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=index.css.map */

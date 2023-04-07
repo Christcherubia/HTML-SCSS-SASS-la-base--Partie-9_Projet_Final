@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "openLight";
+    src: url("../Fonts/OpenSans-Light.ttf");
+}
+@font-face {
+    font-family: "openBold";
+    src: url("../Fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+    font-family: "openItalic";
+    src: url("../Fonts/OpenSans-Italic.ttf");
+}
+@font-face {
+    font-family: "robotoBlack";
+    src: url("../Fonts/RobotoSlab-Black.ttf");
+}
+@font-face {
+    font-family: "robotoLight";
+    src: url("../Fonts/RobotoSlab-Light.ttf");
+}
+
+
+$font1: "openLight", sans-serif;
+$font2: "openBold", serif;
+$font3: "openItalic", arial;
+$font4: "robotoBlack", arial;
+$font5: "robotoLight", cursive; 
+$black1: rgb(17,17,17);
+$white1: rgba(242, 252, 255);
+$white2: rgba(226, 234, 236, 0.911);
+$salmon1: rgba(253, 134, 121, 0.986);
+$salmon2: rgba(250, 124, 110, 0.795);
+$grey1: rgba(231, 231, 231, 0.925);
+$grey2: rgba(128, 128, 128, 0.92);
+$grey3: rgba(150, 150, 150, 0.407);
+
+@mixin title {
+    font-family:$font2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+* {
+    margin: 0;
+    padding: 0;
+    // box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+li {
+    list-style: none;
+}
+a, a:visited {
+    color: $white1;
+}
+body {
+    background: url("../Media/alexandra-dementyeva-Qvsi1vQswOM-unsplash.jpg") fixed center/cover;
+    text-align: center;
+    font-family: $font4;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: $black1;
+        animation: animeBefore 1.5s ease forwards;
+        animation-delay: 0.15s;
+
+        @keyframes animeBefore {
+            to {
+                opacity: 0;
+            }
+        }
+    } 
+}
+.btn {
+    background: none;
+    border: 1px solid $black1;
+    font-family: $font1;
+    height: 45px;
+    width: 170px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    @include title;
+    transition: 0.27s;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}    
